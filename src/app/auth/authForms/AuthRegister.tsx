@@ -23,7 +23,7 @@ const AuthRegister = ({ title, subtitle, subtext }: registerType) => {
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/auth/register', {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
         name: name,
         username: email,  // Here we need to use "username" because the api was created with username and not with email 
         password: password,

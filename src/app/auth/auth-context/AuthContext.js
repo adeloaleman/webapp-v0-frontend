@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {   // This is creating a function
             const formData = new FormData();
             formData.append('username', email);       // Here we need to use "username" because the api was created with username and not with email 
             formData.append('password', password);
-            const response = await axios.post('http://localhost:8000/auth/token', formData, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/token`, formData, {
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             });
             const token = response.data.access_token;
