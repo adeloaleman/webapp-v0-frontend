@@ -280,6 +280,16 @@ const Customizer: FC = () => {
             </Typography>
             <Stack direction={"row"} gap={2} my={2}>
               <StyledBox
+                onClick={() => dispatch(toggleLayout("full"))}
+                display="flex"
+                gap={1}
+              >
+                <AspectRatioTwoToneIcon
+                  color={customizer.isLayout === "full" ? "primary" : "inherit"}
+                />
+                Full
+              </StyledBox>
+              <StyledBox
                 onClick={() => dispatch(toggleLayout("boxed"))}
                 display="flex"
                 gap={1}
@@ -290,16 +300,6 @@ const Customizer: FC = () => {
                   }
                 />
                 Boxed
-              </StyledBox>
-              <StyledBox
-                onClick={() => dispatch(toggleLayout("full"))}
-                display="flex"
-                gap={1}
-              >
-                <AspectRatioTwoToneIcon
-                  color={customizer.isLayout === "full" ? "primary" : "inherit"}
-                />
-                Full
               </StyledBox>
             </Stack>
             <Box pt={4} />
