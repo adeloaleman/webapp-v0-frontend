@@ -1,3 +1,5 @@
+To simplify the Modernize template, I created a new Next.js project and then modified it by copying files/code from Modernize. I installed only the libraries/dependencies (latest versions) required by this simplified project. Here's how I did it:
+
 npx create-next-app@latest nextjs
   *
   *
@@ -43,23 +45,25 @@ npm install react-intersection-observer
 
 public/ tiene que ser reemplazada por la correspondiente de Modernize. En public/ están todas las imágenes usadas.
 
+
 We need to create:
 src/app/app.tsx
 src/app/globals.css
+
 
 Estas también están en Modernize. Aún no sé para que sirven así que no las he creado:
 src/app/loading.tsx
 src/app/not-found.tsx
 
+
 We need to modify layout.tsx: 
 src/app/layout.tsx
+
 
 Delete:
 src/app/page.tsx
 src/app/page.module.css
 src/app/globals.css
-
-
 
 
 I have created/edited the following folders/files and files based on https://www.youtube.com/watch?v=g566eI2EmeY
@@ -78,6 +82,13 @@ I have created/edited the following folders/files and files based on https://www
 /app/(DashboardLayout)/layout/vertical/header/AppLinks.tsx
 /app/(DashboardLayout)/layout/vertical/header/QuickLinks.tsx
 /app/(DashboardLayout)/layout/vertical/header/data.ts
+
+
+
+
+Of course, the above steps don't have to be repeated every time we need to install all the libraries and dependencies. From now on, we can simply do it using the package.json file that was generated during the process above.
+So, to install all the libraries/dependencies listed on package.json, we can just run:
+npm install
 
 
 

@@ -18,8 +18,8 @@ export default function Landingpage () {
   return (
     <PageContainer title="Landingpage" description="this is Landingpage">
       <LpHeader />
-      <Banner />
-      <DemoSlider />
+      {/* <Banner /> */}
+      {/* <DemoSlider /> */}
       <Frameworks />
       <Testimonial />
       <Features />

@@ -39,7 +39,7 @@ const Frameworks = () => {
       <Stack overflow="hidden" mt={6} direction={"row"}>
         <Box>
           <SliderBox>
-          <div style={{ height: '400px' }}></div>
+          <div style={{ height: '150px' }}></div>
             {/* <Image src={sliderImg} alt="slide" style={{ height: "100%" }} /> */}
           </SliderBox>
         </Box>

@@ -49,7 +49,7 @@ export default function Register2() {
             <AuthRegister
               subtext={
                 <Typography variant="subtitle1" textAlign="center" color="textSecondary" mb={1}>
-                  Your Social Campaigns
+                  {/* Your Social Campaigns */}
                 </Typography>
               }
               subtitle={
