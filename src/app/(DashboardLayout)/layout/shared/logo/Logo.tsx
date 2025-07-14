@@ -10,7 +10,7 @@ const Logo = () => {
   console.log("TopbarHeight:", customizer.TopbarHeight);
   const LinkStyled = styled(Link)(() => ({
     height: customizer.TopbarHeight,
-    width: customizer.isCollapse ? "50px" : "50px",
+    width: customizer.isCollapse ? "40px" : "40px",
     overflow: "hidden",
     display: "block",
   }));
@@ -24,9 +24,9 @@ const Logo = () => {
             // src="/images/logos/light-logo.svg"
             src="/images/logos/mis_logos/twitter_1.png"
             alt="logo"
-            // height={customizer.TopbarHeight}  // This is for some reason not working when I modify the value at /src/store/customizer/CustomizerSlice.tsx
-            height={50}
-            width={50}
+            height={customizer.TopbarHeight}  // This is for some reason not working when I modify the value at /src/store/customizer/CustomizerSlice.tsx
+            // height={40}
+            width={40}
             priority
           />
         ) : (
@@ -34,8 +34,8 @@ const Logo = () => {
             // src={"/images/logos/dark-logo.svg"}
             src="/images/logos/mis_logos/twitter_1.png"
             alt="logo"
-            height={50}
-            width={50}
+            height={customizer.TopbarHeight}
+            width={40}
             priority
           />
         )}
@@ -50,8 +50,8 @@ const Logo = () => {
           // src="/images/logos/dark-rtl-logo.svg"
           src="/images/logos/mis_logos/twitter_1.png"
           alt="logo"
-          height={50}
-          width={50}
+          height={customizer.TopbarHeight}
+          width={40}
           priority
         />
       ) : (
@@ -59,8 +59,8 @@ const Logo = () => {
           // src="/images/logos/light-logo-rtl.svg"
           src="/images/logos/mis_logos/twitter_1.png"
           alt="logo"
-          height={50}
-          width={50}
+          height={customizer.TopbarHeight}
+          width={40}
           priority
         />
       )}
