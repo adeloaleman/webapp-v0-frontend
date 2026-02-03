@@ -1,11 +1,22 @@
-To simplify the Modernize template, I created a new Next.js project and then modified it by copying files/code from Modernize. I installed only the libraries/dependencies (latest versions) required by this simplified project. Here's how I did it:
-
-npx create-next-app@latest nextjs
-  *
-  *
+To simplify the Modernize template, I created a new Next.js project and then modified it by copying files/code from Modernize. I installed only the libraries/dependencies (latest versions at the date) required by this simplified project. Here's how I did it:
 
 
-npm install @mui/material @emotion/react @emotion/styled
+npx create-next-app@latest 
+npx create-next-app@14.2.5
+✔ What is your project named? … nextjs-test
+✔ Would you like to use TypeScript? … No / Yes
+✔ Would you like to use ESLint? … No / Yes
+✔ Would you like to use Tailwind CSS? … No / Yes
+✔ Would you like to use `src/` directory? … No / Yes
+✔ Would you like to use App Router? (recommended) … No / Yes
+✔ Would you like to customize the default import alias (@/*)? … No / Yes
+✔ What import alias would you like configured? … @/*
+
+
+This are the libreries needed:
+npm install @mui/material 
+npm install @@emotion/react 
+npm install @@emotion/styled
 npm install @mui/material-nextjs
 npm install @mui/icons-material
 
@@ -43,10 +54,19 @@ npm install framer-motion
 npm install react-intersection-observer
 
 
+Delete
+src/app/page.tsx
+src/app/page.module.css
+src/app/globals.css
+
+
 public/ tiene que ser reemplazada por la correspondiente de Modernize. En public/ están todas las imágenes usadas.
 
 
 We need to create:
+package.json
+package-lock.json
+.env
 src/app/app.tsx
 src/app/globals.css
 
@@ -56,43 +76,48 @@ src/app/loading.tsx
 src/app/not-found.tsx
 
 
-We need to modify layout.tsx: 
-src/app/layout.tsx
-
-
-Delete:
-src/app/page.tsx
-src/app/page.module.css
-src/app/globals.css
+npm install
 
 
 I have created/edited the following folders/files and files based on https://www.youtube.com/watch?v=g566eI2EmeY
-/src/app/layout.tsx
-/src/app/(DashboardLayout)/layout.tsx
-/src/app/auth/auth-context/AuthContext.js
-/src/app/components/protected-route/ProtectedRoute.js
-/src/app/auth/authForms/AuthLogin.tsx
-/src/app/auth/authForms/AuthRegister.tsx
-/src/app/(DashboardLayout)/layout/vertical/header/Profile.tsx
-/src/app/(DashboardLayout)/layout/vertical/header/data.ts
-/src/app/(DashboardLayout)/layout/vertical/sidebar/Sidebar.tsx
-/src/app/(DashboardLayout)/layout/vertical/sidebar/SidebarItems.tsx
-/src/app/(DashboardLayout)/layout/vertical/sidebar/MenuItems.ts
-/app/(DashboardLayout)/layout/vertical/header/Navigation.tsx
-/app/(DashboardLayout)/layout/vertical/header/AppLinks.tsx
-/app/(DashboardLayout)/layout/vertical/header/QuickLinks.tsx
-/app/(DashboardLayout)/layout/vertical/header/data.ts
-
-
-
-
-Of course, the above steps don't have to be repeated every time we need to install all the libraries and dependencies. From now on, we can simply do it using the package.json file that was generated during the process above.
-So, to install all the libraries/dependencies listed on package.json, we can just run:
-npm install
+src/app/layout.tsx
+src/app/(DashboardLayout)/layout.tsx
+src/app/auth/auth-context/AuthContext.js
+src/app/components/protected-route/ProtectedRoute.js
+src/app/auth/authForms/AuthLogin.tsx
+src/app/auth/authForms/AuthRegister.tsx
+src/app/(DashboardLayout)/layout/vertical/header/Profile.tsx
+src/app/(DashboardLayout)/layout/vertical/header/data.ts
+src/app/(DashboardLayout)/layout/vertical/sidebar/Sidebar.tsx
+src/app/(DashboardLayout)/layout/vertical/sidebar/SidebarItems.tsx
+src/app/(DashboardLayout)/layout/vertical/sidebar/MenuItems.ts
+src/app/(DashboardLayout)/layout/vertical/header/Navigation.tsx
+src/app/(DashboardLayout)/layout/vertical/header/AppLinks.tsx
+src/app/(DashboardLayout)/layout/vertical/header/QuickLinks.tsx
+src/app/(DashboardLayout)/layout/vertical/header/data.ts
 
 
 
 
 To run the NextJS app:
 npm run dev
-npm run dev -- -p 3000
+npm run dev -- -p 3000 
+
+
+If case we want o unistall packages:
+npm uninstall @mui/material
+
+
+To recreated node_module:
+rm -rf node_modules
+rm package-lock.json (only in some particular cases)
+npm install
+
+
+
+
+Notas:
+package-lock.json:
+    Records the exact dependency tree that was installed: Exact versions (no ranges), Exact sub-dependencies, Resolved URLs, Integrity hashes
+    So, when you run npm install: npm does not guess - npm recreates the same tree every time.
+    So, package-lock.json exists to: Prevent dependency chaos, Make builds reproducible, Save you from random breakage

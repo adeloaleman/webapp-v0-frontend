@@ -1,0 +1,22 @@
+{
+    "explorer.sortOrder": "filesFirst",
+    "files.exclude": {
+        "**/.*": false,
+        "**/__pycache__": false,
+        "**/__init__.py": false,
+        "**/*.pyc": false,
+        "**/.git": false,
+        ".idea": false,
+        ".vscode": false,
+        ".venv": false
+    },
+
+    // Controls tree indentation in pixels
+    "workbench.tree.indent": 20,
+
+    // This is to prevent a file from opening with just a single click
+    "workbench.list.openMode": "doubleClick",
+    "favorites.sortDirection": "DESC",
+
+    "python.defaultInterpreterPath": "fastapi/.venv/bin/python"
+}
