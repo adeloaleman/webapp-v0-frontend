@@ -99,7 +99,7 @@ src/app/(DashboardLayout)/layout/vertical/header/data.ts
 
 
 
-To run the NextJS app: 
+To run the NextJS app:  
 npm run dev
 npm run dev -- -p 3000 
 
